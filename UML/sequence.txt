@@ -1,0 +1,51 @@
+@startuml
+
+actor User
+boundary main
+entity FileRW
+entity Convert
+
+activate User
+User -> main: convert my file
+deactivate User
+activate main
+main -> FileRW: check file
+deactivate main
+activate FileRW
+FileRW -> FileRW: is file\nok?
+FileRW --> main: checked
+deactivate FileRW
+activate main
+main -> FileRW: convert file
+deactivate main
+activate FileRW
+
+alt convert to Txt
+FileRW -> Convert: XML file
+activate Convert
+else convert to Xml
+FileRW -> Convert: TXT file
+end
+deactivate FileRW
+
+Convert -> Convert: convert file
+Convert --> FileRW: result
+deactivate Convert
+activate FileRW
+
+FileRW -> FileRW: if no error\nsave to file
+FileRW --> main: result
+deactivate FileRW
+activate main
+
+destroy FileRW
+destroy Convert
+
+main --> User: result
+
+deactivate main
+destroy main
+activate User
+deactivate User
+
+@enduml

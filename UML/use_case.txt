@@ -1,0 +1,11 @@
+@startuml
+
+(convert my file) as (conv)
+User << Human >>
+
+User -> (conv)
+
+(conv) <.. (ToXml) : <<exclude>>\n(file=txt)
+(conv) <.. (ToTxt) : <<exclude>>\n(file=xml)
+
+@enduml

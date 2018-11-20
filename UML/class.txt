@@ -1,0 +1,35 @@
+@startuml
+
+class FileRW
+{
+ - char ext
+ - string outPath
+ - vector<string> txtFile
+ - checkExt() : size_t
+ + loadFromFile() : char
+ + saveToFile() : bool
+ + getData() : vector<string>&
+} 
+
+class Convert
+{
+ # vector<string> converted
+ + {abstract} convert() : bool 
+}
+
+class ToTxt
+{
+  + convert() : bool
+}
+
+class ToXml
+{
+ - validChar() : string 
+ + convert() : bool
+}
+
+FileRW - Convert
+Convert <|-- ToTxt
+Convert <|-- ToXml
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+
+start
+:startup parameter;
+if (check file / correct?) then (\nyes\n)
+   :load data from file;
+   if (XML or TXT) then ( xml )
+      :skip unnecessary\n\tlines;
+      :convert to txt;
+      if ( errors? ) then ( yes )
+         stop
+      else (no)
+      endif
+   else ( txt )
+      :convert to xml;
+      if ( errors? ) then ( yes )
+         stop
+      else (no)
+      endif
+   endif 
+else ( no )
+   stop
+endif
+
+:save data to\n\tfile;
+stop
+
+@enduml

@@ -44,7 +44,7 @@ bool ToTxt::convert(vector<string> &data)
                         }
                         pElemCol = pElemCol->NextSiblingElement();
                     }
-                    if (str.length())        // without last space in line
+                    if (str.length())
                          converted.push_back(str.substr(0, str.length()-1));
                 }
             } while (pElemRow = pElemRow->NextSiblingElement());

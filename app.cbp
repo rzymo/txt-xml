@@ -12,15 +12,31 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++1z" />
 					<Add option="-g" />
+					<Add option="-pthread" />
 				</Compiler>
+				<Linker>
+					<Add option="-lgtest" />
+					<Add option="-pthread" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Convert.cpp" />
+		<Unit filename="Convert.h" />
+		<Unit filename="FileRW.cpp" />
+		<Unit filename="FileRW.h" />
+		<Unit filename="ToTxt.cpp" />
+		<Unit filename="ToTxt.h" />
+		<Unit filename="ToXml.cpp" />
+		<Unit filename="ToXml.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="tinyxml2.cpp" />
+		<Unit filename="tinyxml2.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

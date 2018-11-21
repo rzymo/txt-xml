@@ -24,7 +24,7 @@ bool ToTxt::convert(vector<string> &data)
     xml.Parse(str.c_str(), str.length()); // string -> XML structure
 
     if (!(pRoot = xml.FirstChild()))
-        { cout << "bad xml structure (no root?)\n"; return false; } // root
+        return false; // root
     else
     {
         if (pElemRow = pRoot->FirstChildElement()) // row

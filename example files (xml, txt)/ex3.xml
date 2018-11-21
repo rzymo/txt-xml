@@ -1,0 +1,27 @@
+<?xml = xxxyyyzzz?>
+<!-- comment -->
+<?xml = something ?>
+<root>
+<row>
+<col/>
+</row>
+<row>
+<col>1</col>
+<col></col>
+<col>3</col>
+</row>
+<row>
+<col>ala</col>
+<col></col>
+<!-- another comment -->
+<col>kota</col>
+</row>
+<row>
+<col>5</col>
+<col></col>
+<col>7</col>
+</row>
+<row>
+<col></col>
+</row>
+</root>
